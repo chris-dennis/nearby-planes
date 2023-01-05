@@ -12,8 +12,8 @@ var apiKey = process.env.apiKey
 
 const app = express()
 app.use(cors())
-app.use(express.static((__dirname, + '/build/')))
-app.use(express.static((__dirname + '/public/')))
+app.use(express.static(path.join(__dirname, + '../build/')))
+app.use(express.static(path.join(__dirname + '../public/')))
 
 // app.get('*', (req, res) => {
 //     res.sendFile(path.resolve('build', 'index.html'));
