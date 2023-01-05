@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/nearby-planes/static/css/main.b3d9485f.css",
+    "main.js": "/nearby-planes/static/js/main.b900156e.js",
+    "static/js/787.18c9c323.chunk.js": "/nearby-planes/static/js/787.18c9c323.chunk.js",
+    "index.html": "/nearby-planes/index.html",
+    "main.b3d9485f.css.map": "/nearby-planes/static/css/main.b3d9485f.css.map",
+    "main.b900156e.js.map": "/nearby-planes/static/js/main.b900156e.js.map",
+    "787.18c9c323.chunk.js.map": "/nearby-planes/static/js/787.18c9c323.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b3d9485f.css",
+    "static/js/main.b900156e.js"
+  ]
+}
