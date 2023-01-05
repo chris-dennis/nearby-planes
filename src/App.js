@@ -20,7 +20,7 @@ function App() {
   const lomax = userLong + newdist
 
   const fetchFlight = () => {
-    fetch('http://localhost:3001/', {
+    fetch('https://nearby-planes.herokuapp.com/api', {
       headers: {lamin: lamin, lomin: lomin, lamax: lamax, lomax: lomax}
     })
     .then((response) => response.text())

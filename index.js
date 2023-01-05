@@ -15,11 +15,8 @@ app.use(cors())
 app.use(express.static(path.join(__dirname, 'build')))
 app.use(express.static(path.join(__dirname, 'public')))
 
-// app.get('*', (req, res) => {
-//     res.sendFile(path.resolve('build', 'index.html'));
-//   });
 
-app.get('/', (req,res) => {
+app.get('/api', (req,res) => {
     const options ={
         method: 'GET',
         url: 'https://airlabs.co/api/v9/flights?_view=array&_fields=reg_number,aircraft_icao,flag,lat,lng,speed,alt,dep_iata,arr_iata,status&bbox='
