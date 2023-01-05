@@ -15,7 +15,7 @@ app.use(cors())
 app.use(express.static(path.resolve(__dirname, '../build/')))
 
 app.get('*', (req, res) => {
-    const index = path.resolve('../build/index.html');
+    const index = path.resolve(__dirname, '../build/index.html');
     res.sendFile(index);
   });
 
