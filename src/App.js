@@ -4,7 +4,6 @@ import Location from './components/location';
 import Flights from './components/flights';
 import { TbRefresh } from 'react-icons/tb';
 import $ from 'jquery'
-import axios from 'axios';
 
 function App() {
   const [locationStatus, setLocationStatus] = useState(false)
@@ -14,13 +13,11 @@ function App() {
   const [cardsLoaded, setCardsLoaded] = useState(false)
   const [dist, setDist] = useState(25)
 
-  const newdist = (dist / 111) // idk about this one chief
+  const newdist = (dist / 111) // not accurate lol
   const lamin = userLat - newdist
   const lomin = userLong - newdist
   const lamax = userLat + newdist
   const lomax = userLong + newdist
-  // const API = 'https://airlabs.co/api/v9/flights?_view=array&_fields=reg_number,aircraft_icao,flag,lat,lng,speed,alt,dep_iata,arr_iata,status,flight_iata,airline_icao&bbox=' 
-  // + lamin + ',' + lomin + ',' + lamax + ',' + lomax + '&api_key=c8d9ed53-9bc5-4f98-bcb8-e9b5d3df3287'
 
   const fetchFlight = () => {
     fetch('http://localhost:3001/', {
@@ -36,23 +33,6 @@ function App() {
   }
   
 
-  // const fetchFlight = () => {
-  //   const axios = require('axios')
-  //   const options = {
-  //     method: 'GET',
-  //     url: 'http://localhost:3001/',
-  //     responsetype: 'text',
-  //     params: {lamin: lamin, lomin: lomin, lamax: lamax, lomax: lomax}
-  //   }
-
-  //   axios.request(options).then((response =>{
-  //     getFlightLog(response)
-  //     setCardsLoaded(true)
-  //     $('.dropdown').show()
-  //     $('#distance-controls').show()
-  //   }))
-
-  // }
 
   const getLocation = () => {
     if (!navigator.geolocation){
@@ -90,7 +70,6 @@ function App() {
   return (
     <div className="App">
             <div id='top'>
-              {/* <div id='location-status'>{locationStatus ? <p id='location-available'> &#9679; Location available</p> : <p id='location-unavailable'> &#9679; Location unavailable, check browser</p>}</div> */}
                 <p id='location-reminder'>Location is required to use this app</p>
             </div>
             <div id='welcome-info'>

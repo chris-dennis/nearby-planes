@@ -12,7 +12,7 @@ var apiKey = process.env.apiKey
 
 const app = express()
 app.use(cors())
-
+app.use(express.static(path.resolve(__dirname, '../build/')))
 app.get('/', (req,res) => {
     const options ={
         method: 'GET',
@@ -24,7 +24,7 @@ app.get('/', (req,res) => {
     axios.request(options)
     .then((response) => {
         var parsedData = JSON.parse(response.data) // required 
-        res.json(parsedData) // to display it on localhost:3001
+        res.json(parsedData) // to display
     }
     )
 
