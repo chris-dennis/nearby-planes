@@ -13,10 +13,11 @@ var apiKey = process.env.apiKey
 const app = express()
 app.use(cors())
 app.use(express.static(path.resolve(__dirname, '/build/')))
+app.use(express.static(path.resolve(__dirname, '/public/')))
 
-// app.get('*', (req, res) => {
-//     res.sendFile(path.resolve(__dirname, '../build/index.html'));
-//   });
+app.get('*', (req, res) => {
+    res.sendFile(path.resolve('build', 'index.html'));
+  });
 
 app.get('/', (req,res) => {
     const options ={
