@@ -31,9 +31,12 @@ export default function Flights(props) {
                 origin = origin.toLowerCase()
             }else{
                 origin = "N/A"
-                var countryName = "N/A"
-            }            
+                countryName = "N/A"
+            }
 
+            if(countryName === null || typeof countryName === 'undefined'){
+                countryName = "N/A"
+            }
     
             const status = rawFlights[i][9]
             const velocity = parseInt(rawFlights[i][5]).toFixed(0)

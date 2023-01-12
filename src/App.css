@@ -49,7 +49,7 @@ body{
   margin-top: -40px;
 }
 
-#info-wrapper h4,h5,h6{
+#info-wrapper h4,#info-wrapper h5,#info-wrapper h6{
   text-align: left;
 }
 #flight-status{
