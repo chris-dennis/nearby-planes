@@ -1,0 +1,378 @@
+/* General Styles */
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+
+}
+
+html, body, root {
+  background-color: #292929;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0 auto;
+  color: white;
+}
+
+main{
+  flex: 1;
+}
+
+#flights{
+  min-height: 100vh;
+  margin-bottom: 100px;
+}
+
+.map-container{
+  height: 1080px;
+  width: 1920px;
+  margin: 0 auto;
+}
+
+/* Flight Card Container */
+.flight-card {
+  color: black;
+  border: 1px solid #000;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s;
+  max-width: 900px;
+  margin: 0 auto 10px auto;
+}
+
+.flight-card:hover {
+  transform: scale(1.02);
+}
+
+.flight-summary {
+  background-color: #ffffff;
+  cursor: pointer;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.flight-summary:hover {
+  background-color: #0024b4;
+  color: #fff;
+}
+
+#flight-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+}
+
+#flight-info li {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+}
+
+.icon {
+  margin-right: 18px;
+  display: flex;
+  align-items: center;
+  z-index: 999999;
+
+}
+
+#callsign,
+#origin,
+#dist,
+#speed {
+  display: flex;
+  align-items: center;
+}
+
+#callsign {
+  flex: 2;
+}
+
+#origin,
+#dist,
+#speed {
+  flex: 3;
+}
+#origin {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis
+}
+
+#countryname {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: visible;
+  max-width: 150px;
+  z-index: 5
+}
+
+#countryname.overflowing {
+  animation: scroll 5s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Flight Cards Section */
+.flight-details {
+  background-color: #ffffff;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#info-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#flight-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#flight-status h4 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.flight-details h5{
+  margin: 0;
+  font-size: 16px;
+}
+.flight-details h6{
+  font-size: 14px;
+  margin: 0;
+}
+
+#airline{
+  color: rebeccapurple;
+}
+
+#depart-arrive-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #ff767a;
+}
+
+#depart,
+#arrive {
+  flex: 1;
+  font-weight: bold;
+}
+
+.progress {
+  flex: 2;
+  min-height: 16px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  margin: 0 10px;
+  position: relative;
+  height: 10px;
+  width: 100%;
+}
+
+.progress-bar {
+  height: 100%;
+  max-width: 99%;
+  background-color: #4caf50;
+  transition: width 0.3s;
+  position: relative;
+  border-radius: 2px;
+}
+
+.plane-icon {
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+}
+
+/* View on Map Button */
+.flight-details button {
+  padding: 10px 15px;
+  background-color: #4caf50;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: background-color 0.3s;
+}
+
+.flight-details button:hover {
+  background-color: #45a049;
+}
+
+/* Mobile Screens */
+@media (max-width: 768px) {
+  .flight-card {
+    margin: 0 auto;
+    width: 400px;
+  }
+
+  #flight-info {
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0;
+    list-style: none;
+  }
+
+  #flight-info li {
+    margin: 5px 0;
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .flight-details {
+    padding: 10px;
+  }
+
+  .map-container {
+    height: 600px;
+    width: 380px;
+    margin: 0 auto;
+  }
+
+  #countryname {
+    display: none;
+    overflow: hidden;
+  }
+
+  #cc{
+    height: 24px;
+    margin-left: 25px;
+  }
+}
+
+
+/* Medium Screens */
+@media (min-width: 769px) and (max-width: 1360px) {
+  .flight-card {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  #flight-info {
+    font-size: 14px;
+  }
+
+  #flight-info li {
+    margin: 5px 0;
+  }
+
+  .flight-details {
+    padding: 10px;
+  }
+
+  .map-container {
+    height: 700px;
+    width: 1200px;
+    margin: 0 auto;
+  }
+
+}
+
+
+/* Location */
+#location {
+  margin-top: 15px;
+}
+#location-disp {
+  color: #dcd6f7;
+}
+
+.location-selector {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  color: black;
+  border-radius: 25px;
+  padding: 5px;
+  max-width: 500px;
+  margin: 20px auto;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.select-container {
+  display: flex;
+  align-items: center;
+}
+
+.react-select-container {
+  min-width: 250px;
+  width: fit-content;
+  text-align:left;
+}
+
+.current-location-button {
+  margin-left: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.vertical-line {
+  width: 1px;
+  height: 30px;
+  background-color: #ccc;
+  margin: 0 10px;
+}
+
+.search-button {
+  padding-right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+  margin-top: 10px;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+/* Sort Controls */
+#sort-controls {
+  margin-bottom: 20px;
+}
+
+.flight-popup {
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
