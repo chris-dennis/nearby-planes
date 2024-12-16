@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 3001;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const apiKey = process.env.apiKey;
+const apiKey = process.env.API_KEY;
 
 // Middleware
 app.use(cors());
