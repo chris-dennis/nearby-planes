@@ -271,7 +271,13 @@ main{
   }
 }
 
-
+@media (min-width: 1200px) and (max-width: 1920px) {
+  .map-container{
+    height: 1080px;
+    width: 1220px;
+    margin: 0 auto;
+  }
+}
 /* Medium Screens */
 @media (min-width: 769px) and (max-width: 1360px) {
   .flight-card {

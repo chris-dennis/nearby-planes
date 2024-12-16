@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import Geocode from 'react-geocode';
 import { TbLocation } from 'react-icons/tb';
+export const GEO_API_KEY = import.meta.env.VITE_GEO_API_KEY;
 
-Geocode.setApiKey(process.env.geoApiKey);
+Geocode.setApiKey(GEO_API_KEY);
 
 export default function Location({ userLat, userLong, len }) {
     const [locationDisplay, setLocationDisplay] = useState('');

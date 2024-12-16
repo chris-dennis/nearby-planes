@@ -128,10 +128,10 @@ function App() {
                                     <TbRefresh/>
                                 </motion.div> : <TbCurrentLocation/>}
                         </button>
-                        <span className="vertical-line"></span>
-                        <button onClick={() => handleSelectChange(searchInput)} className="search-button" title="Search">
-                            <TbSearch />
-                        </button>
+                        {/*<span className="vertical-line"></span>*/}
+                        {/*<button onClick={() => handleSelectChange(searchInput)} className="search-button" title="Search">*/}
+                        {/*    <TbSearch />*/}
+                        {/*</button>*/}
                     </div>
                     {error && <p className="error">{error}</p>}
                 </div>
